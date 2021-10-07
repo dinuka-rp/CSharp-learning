@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tutorial2</name>
+    </assembly>
+    <members>
+        <member name="M:Tutorial2.Tutorial2.OutputInformation(System.Object)">
+            <summary>
+            This is a super function
+            </summary>
+            <param name="person">This is required to be a professor or a student</param>
+        </member>
+    </members>
+</doc>

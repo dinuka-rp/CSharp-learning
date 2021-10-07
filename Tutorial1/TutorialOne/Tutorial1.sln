@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialOne", "TutorialOne.csproj", "{5D2E7941-61DE-48E0-8D65-B5CE9A1B8D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial2", "..\Tutorial2\Tutorial2.csproj", "{076DCEA3-7B06-424B-98EB-1053FF7D184B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D2E7941-61DE-48E0-8D65-B5CE9A1B8D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2E7941-61DE-48E0-8D65-B5CE9A1B8D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2E7941-61DE-48E0-8D65-B5CE9A1B8D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2E7941-61DE-48E0-8D65-B5CE9A1B8D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076DCEA3-7B06-424B-98EB-1053FF7D184B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076DCEA3-7B06-424B-98EB-1053FF7D184B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076DCEA3-7B06-424B-98EB-1053FF7D184B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076DCEA3-7B06-424B-98EB-1053FF7D184B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2977357-B8C3-4ED7-94B6-2647EFC09CB8}
+	EndGlobalSection
+EndGlobal
