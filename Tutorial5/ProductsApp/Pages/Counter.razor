@@ -1,0 +1,25 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<p>
+    <input type="text" @bind-value="@userIncrementValue" @bind-value:event="oninput" />
+</p>
+<p>
+    Increment Value Entered: @userIncrementValue
+</p>
+
+
+@code {
+    private int currentCount = 0;
+    private int userIncrementValue = 1;
+
+    private void IncrementCount()
+    {
+        currentCount += userIncrementValue;
+    }
+}

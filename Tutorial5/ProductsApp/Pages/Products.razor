@@ -1,0 +1,78 @@
+﻿@page  "/products"
+
+<NavLink href="/">Go Back to Home</NavLink>
+
+<h3>Products</h3>
+
+<NewComponent />
+<hr />
+<Counter></Counter>
+<Counter></Counter>
+
+<hr />
+
+<div class="card card-body m-3">
+    <h2>Two-way binding to a "server" variable</h2>
+
+    <p>
+        Enter name: <input type="text" @bind-value="name" @bind-value:event="oninput" />
+    </p>
+    <p>
+        Entered name: @name
+    </p>
+</div>
+
+<hr />
+
+<p>
+    Is user logged in? <input type="checkbox" @bind="isLoggedIn" />
+</p>
+<p>
+    Logged in: @isLoggedIn
+</p>
+
+@if (isLoggedIn)
+{
+    <div class="card card-body m-3">
+        <p>
+            <input type="text" @bind-value="@productToAdd" @bind-value:event="oninput" />
+        </p>
+        <p>
+            Product name: @productToAdd
+        </p>
+        <p>
+            <button class="btn btn-primary" @onclick="AddItem">Add item</button>
+        </p>
+    </div>
+}
+
+<hr />
+ 
+<!--
+<ul>
+    @foreach (var product in products)
+    {
+        <li>@product</li>
+    }
+</ul>
+-->
+
+<table class="table table-bordered">
+    @foreach (var product in products)
+    {
+        <ProductItem ProductName="@(product)"/>
+    }
+</table>
+
+@code {
+    private string name = "Milos";
+    private bool isLoggedIn;
+    private string productToAdd;
+    private List<string> products = new List<string>() { "Apples", "Oranges", "Grapes" };
+
+    private void AddItem()
+    {
+        products.Add(productToAdd);
+        productToAdd = "";
+    }
+}

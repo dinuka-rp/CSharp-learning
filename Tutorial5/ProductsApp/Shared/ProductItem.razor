@@ -1,0 +1,7 @@
+﻿<tr><td>@ProductName</td><td><a href="editProduct?prodname=@(ProductName)">Edit</a></td></tr>
+<!--check if NavLink will work with a custom variable-->
+
+@code {
+    [Parameter]
+    public string ProductName { get; set; }
+}
