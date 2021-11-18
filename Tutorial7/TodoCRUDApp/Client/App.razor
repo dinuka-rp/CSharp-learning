@@ -1,0 +1,57 @@
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    @if (!context.User.Identity.IsAuthenticated)
+                    {
+                        <RedirectToLogin />
+                    }
+                    else
+                    {
+                        <p>You are not authorized to access this resource.</p>
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+
+@* this is created here so that only one dictionary is created when the application is started & it can be accessed from multiple pages *@
+@code{
+    public static Dictionary<Guid, Todo> Todos = new Dictionary<Guid, Todo>();
+
+    protected override void OnInitialized()
+    {
+        //base.OnInitialized();
+        var todo1 = new Todo()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Grosery shopping",
+            Description = "Buy some vegetables and milk"
+        };
+
+        var todo2 = new Todo()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Pay bills",
+            Description = "Pay for this month's rent and electricity"
+        };
+
+        var todo3 = new Todo()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Clean up the room",
+            Description = "Vaccum the floor and wipe the table"
+        };
+
+        Todos.Add(todo1.Id, todo1);
+        Todos.Add(todo2.Id, todo2);
+        Todos.Add(todo3.Id, todo3);
+    }
+}
