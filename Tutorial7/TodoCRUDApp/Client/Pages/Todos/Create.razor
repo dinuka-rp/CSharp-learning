@@ -11,13 +11,13 @@
 
     <div class="form-group">
         <label class="control-label">Name</label>
-        <InputText @bind-Value="@todo.Name"></InputText>
+        <InputText class="form-control" @bind-Value="@todo.Name"></InputText>
         <ValidationMessage For="@(()=>todo.Name)" />
     </div>
 
     <div class="form-group">
         <label class="control-label">Description</label>
-        <InputText @bind-Value="@todo.Description"></InputText>
+        <InputText class="form-control" @bind-Value="@todo.Description"></InputText>
         <ValidationMessage For="@(()=>todo.Description)" />
     </div>
 
