@@ -1,0 +1,32 @@
+﻿@*@page "/todos/details/{Id:guid}"
+
+<h3>Read Todo</h3>
+
+<h4>Title</h4>
+<p>@todo.Name</p>
+
+<h4>Description</h4>
+<p>@todo.Description</p>
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+
+    //prop
+    public TodoCRUDApp.Shared.Todo todo { get; set; }
+
+    protected override void OnInitialized()
+    // any logic/ code needs to go in methods
+    {
+        base.OnInitialized();
+
+        if (App.Todos.ContainsKey(Id))
+        {
+            todo = App.Todos[Id];
+        }
+        else
+        {
+            Console.WriteLine("Id does not exist.");
+        }
+    }
+}*@

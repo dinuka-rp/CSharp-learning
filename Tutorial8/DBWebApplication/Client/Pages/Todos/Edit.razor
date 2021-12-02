@@ -1,0 +1,47 @@
+﻿@page "/todos/edit/{Id:guid}"
+
+@*@attribute [Authorize]
+@inject NavigationManager Navigation
+
+<h3>Edit Todo</h3>
+
+<EditForm Model="todo" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+     this will validate the input against the fields mentioned in the model 
+
+    <div class="form-group">
+        <label class="control-label">Name</label>
+        <InputText @bind-Value="@todo.Name"></InputText>
+        <ValidationMessage For="@(()=>todo.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Description</label>
+        <InputText @bind-Value="@todo.Description"></InputText>
+        <ValidationMessage For="@(()=>todo.Description)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>*@
+
+@*@code {
+    [Parameter]
+    public Guid Id { get; set; }
+
+    private Todo todo { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (App.Todos.ContainsKey(Id))
+            todo = App.Todos[Id];
+        else
+            Console.WriteLine("Id does not exist");
+    }
+
+    private void HandleValidSubmit()
+    {
+        App.Todos[Id] = todo;
+        Navigation.NavigateTo("/todos");        // redirect to index todos page
+    }
+}*@

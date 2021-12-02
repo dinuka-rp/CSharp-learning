@@ -15,5 +15,7 @@ namespace DBWebApplication.Server.Data
             : base(options)
         {
         }
+
+        public DbSet<Todo> Todos { get; set; }
     }
 }
